@@ -4,9 +4,10 @@ from django.utils.timezone import now
 
 class Project(models.Model):
     pid=models.AutoField(primary_key=True)
-    pname=models.TextField()
+    pname=models.CharField(max_length=20)
     time=models.DurationField()
     starttime=models.DateTimeField(default=now)
+    projshortdesc=models.CharField(max_length=50,default=None)
     pfield=models.CharField(max_length=20)
     branch_restriction=models.BooleanField(default=False)
     number_of_people=models.IntegerField()
@@ -16,10 +17,11 @@ class Project(models.Model):
 
 class Research(models.Model):
     rid=models.AutoField(primary_key=True)
-    rname=models.TextField()
+    rname=models.CharField(max_length=20)
     rfield=models.CharField(max_length=20)
     rnumber_of_people=models.IntegerField()
     duration=models.DurationField()
+    rescshortdesc=models.CharField(max_length=50,default=None)
     research_start_time=models.DateTimeField()
     dept_restriction=models.BooleanField()
 
