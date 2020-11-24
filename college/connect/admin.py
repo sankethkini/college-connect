@@ -1,8 +1,8 @@
 from django.contrib import admin
 
-# Register your models here.
+# # Register your models here.
 
-from .models import Project,Teacher,Student,Research,Project_Student,Project_Teacher,Research_Teacher
+from .models import *
 
 admin.site.register(Project)
 admin.site.register(Student)
